@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="images/1200px-Gnu-linux_minimalistic_logo.svg.png">
+			</div>
+			<ul>
+				<li class="active"><a href="#">主页</a></li>
+				<li><a href="#">作业</a></li>
+				<li><a href="#">笔记</a></li>
+				<li><a href="#">关于</a></li>
+				<li><a href="#">联系</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<h1>欢迎来到Linux的世界！</h1>
+		</div>
+		<div class="button">
+			<a href="#" class="btn">什么是Linux？</a>
+		</div>
+	</header>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+// 社会主义核心价值观
+var a_idx = 0;
+ 
+    $("body").click(function(e) {
+        var a = new Array(
+            "Linux", "Kali", "Ubuntu", "Centos",
+            "Fedora", "Debian", "Clear linux", "Arch",
+            "万物基于Unix", "一切皆文件", "Free", "open source"
+            );
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 144469,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FFFFFF"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove()
+        })
+    });
+ 
+</script>
+</html>
